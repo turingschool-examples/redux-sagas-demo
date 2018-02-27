@@ -11,6 +11,12 @@ class Login extends Component {
     }
   }
 
+  componentWillMount = () => {
+    if(this.props.loggedIn) {
+      this.props.history.push('/main')
+    }
+  }
+
   componentWillReceiveProps = (nextProps) => {
     if(nextProps.loggedIn) {
       this.props.history.push('/main')

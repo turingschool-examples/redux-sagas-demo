@@ -9,7 +9,6 @@ import Login from '../../containers/Login'
 import Main from '../../containers/Main'
 import rootReducer from '../../reducers';
 import listenForSubmitLoginUser from '../../sagas'
-import logo from '../../assets/logo.svg';
 import './styles.css';
 
 const sagaMiddleware = createSagaMiddleware()

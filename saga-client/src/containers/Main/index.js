@@ -8,6 +8,12 @@ class Main extends Component {
     }
   }
 
+  componentWillReceiveProps = (nextProps) => {
+    if(!nextProps.loggedIn) {
+      this.props.history.push('/login')
+    }
+  }
+
   render = () => (
     <div>
       This is the main page
