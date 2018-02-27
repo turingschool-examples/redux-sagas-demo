@@ -18,4 +18,10 @@ describe('API', () => {
     expect(response.statusCode).toBe(404)
     expect(response.body).toEqual({error: 'Not found'})
   })
+
+  it('should return a user if the send password is ok', async () => {
+    const response = await request(app).post('/users')
+                                       .send({email: 'wvmitchell@gmail.com', password: 'password'})
+    expect(response.body).toEqual({id: 0, email: 'wvmitchell@gmail.com'})
+  })
 })
