@@ -4,7 +4,7 @@
   "description": "A minimal server for showing off the abilities of redux-sagas",
   "main": "index.js",
   "scripts": {
-    "test": "jest * --coverage",
+    "test": "jest * --coverage --watch",
     "start": "npm run build && nodemon build",
     "build": "babel src -d build"
   },

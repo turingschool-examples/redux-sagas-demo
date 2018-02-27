@@ -2,6 +2,11 @@ import request from 'supertest'
 import app from '../app'
 
 describe('API', () => {
+  it('should return hello world', async () => {
+    const response = await request(app).get('/')
+    expect(response.text).toEqual('Hello world!')
+  })
+
   it('should return a user with id: 1', async () => {
     const response = await request(app).get('/users/1')
     expect(response.statusCode).toBe(200)

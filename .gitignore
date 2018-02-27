@@ -1,2 +1,4 @@
 /saga-server/node_modules
+/saga-server/build
+/saga-server/coverage
 /saga-demo/node_modules
