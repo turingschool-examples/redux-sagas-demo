@@ -10,6 +10,12 @@ class Login extends Component {
       password: '',
     }
   }
+
+  componentWillReceiveProps = (nextProps) => {
+    if(nextProps.loggedIn) {
+      this.props.history.push('/main')
+    }
+  }
     
   handleChange = event => {
     event.preventDefault()
@@ -21,7 +27,6 @@ class Login extends Component {
   submitLogin = async event => {
     event.preventDefault()
     await this.props.loginUser(this.state)
-    this.props.history.push('/main')
   }
 
   render = () => (
@@ -35,8 +40,12 @@ class Login extends Component {
   )
 }
 
+const mapStateToProps = (state) => ({
+  loggedIn: state.authentication.loggedIn
+})
+
 const mapDispatchToProps = (dispatch) => ({
   loginUser: (user) => dispatch(actions.loginUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
