@@ -2,7 +2,11 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import * as api from '../api'
 
 function* submitLoginUser(action) {
-  console.log(action)
+  try {
+    const user = yield call(api.postLoginUser, action.email, action.password)
+    console.log(user)
+  } catch(err) {
+  }
 }
 
 function* listenForSubmitLoginUser() {

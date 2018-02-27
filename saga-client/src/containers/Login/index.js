@@ -20,7 +20,7 @@ class Login extends Component {
 
   submitLogin = async event => {
     event.preventDefault()
-    await this.props.submitLoginUser(...this.state)
+    await this.props.submitLoginUser(this.state.email, this.state.password)
     this.props.history.push('/main')
   }
 
