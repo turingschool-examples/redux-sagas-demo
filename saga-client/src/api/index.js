@@ -11,7 +11,7 @@ export const postLoginUser = async (email, password) => {
     if(response.status === 200) {
       return await response.json()
     } else {
-      throw(new Error('not authorized'))
+      throw(new Error(`Errored with status code ${response.status}`))
     }
   } catch (err) {
     throw(err)
