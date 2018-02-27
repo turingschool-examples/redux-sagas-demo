@@ -1,7 +1,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
+import * as api from '../api'
 
-function* submitLoginUser() {
-  console.log("I'm here!")
+function* submitLoginUser(action) {
+  console.log(action)
 }
 
 function* listenForSubmitLoginUser() {
