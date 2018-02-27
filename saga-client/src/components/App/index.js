@@ -7,7 +7,6 @@ import { Route } from 'react-router';
 import Login from '../../containers/Login'
 import Main from '../../containers/Main'
 import rootReducer from '../../reducers';
-import logo from '../../assets/logo.svg';
 import './styles.css';
 
 const store = createStore(
