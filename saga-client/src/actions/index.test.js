@@ -16,4 +16,15 @@ describe('actions', () => {
     }
     expect(actions.logoutUser()).toEqual(expected)
   })
+
+  it('should have a type of SUBMIT_LOGIN_USER', () => {
+    const mockEmail = 'wvmitchell@gmail.com'
+    const mockPassword = 'password'
+    const expected = {
+      type: 'SUBMIT_LOGIN_USER',
+      email: mockEmail,
+      password: mockPassword,
+    }
+    expect(actions.submitLoginUser(mockEmail, mockPassword)).toEqual(expected)
+  })
 })
