@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
+import { Route } from 'react-router';
 
+import Login from '../../containers/Login'
+import Main from '../../containers/Main'
 import rootReducer from '../../reducers';
 import logo from '../../assets/logo.svg';
 import './styles.css';
@@ -15,15 +19,12 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-        </div>
+        <BrowserRouter>
+          <div>
+            <Route path='/login' component={Login} />
+            <Route path='/main' component={Main} />
+          </div>
+        </BrowserRouter>
       </Provider>
     );
   }
