@@ -1,0 +1,23 @@
+{
+  "name": "saga-server",
+  "version": "1.0.0",
+  "description": "A minimal server for showing off the abilities of redux-sagas",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest * --coverage",
+    "start": "npm run build && nodemon build",
+    "build": "babel src -d build"
+  },
+  "author": "Will Mitchell <wvmitchell@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.2",
+    "superagent": "^3.8.2"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "express": "^4.16.2",
+    "supertest": "^3.0.0"
+  }
+}
