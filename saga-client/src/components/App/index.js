@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router';
+import { Route, Redirect } from 'react-router';
 
 import Login from '../../containers/Login'
 import Main from '../../containers/Main'
@@ -27,6 +27,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div>
+            <Route path='/' render={() => <Redirect to='/login' />} />
             <Route path='/login' component={Login} />
             <Route path='/main' component={Main} />
           </div>
