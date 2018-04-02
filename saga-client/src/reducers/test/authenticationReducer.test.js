@@ -34,4 +34,15 @@ describe('authenticationReducer', () => {
     }
     expect(authenticationReducer(initalState, actions.logoutUser())).toEqual(expected)
   })
+
+  it('sets an error', () => {
+    const initalState = {
+      loggedIn: false
+    }
+    const expected = {
+      loggedIn: false,
+      loginError: 'An error occured'
+    }
+    expect(authenticationReducer(initalState, actions.loginError('An error occured'))).toEqual(expected)
+  })
 })

@@ -6,3 +6,8 @@ export const loginUser = (user) => ({
 export const logoutUser = () => ({
   type: 'LOGOUT_USER',
 })
+
+export const loginError = (error) => ({
+  type: 'LOGIN_ERROR',
+  error
+})

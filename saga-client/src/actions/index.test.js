@@ -16,4 +16,12 @@ describe('actions', () => {
     }
     expect(actions.logoutUser()).toEqual(expected)
   })
+
+  it('should have a type of LOGIN_ERROR', () => {
+    const expected = {
+      type: 'LOGIN_ERROR',
+      error: 'An error'
+    }
+    expect(actions.loginError('An error')).toEqual(expected)
+  })
 })

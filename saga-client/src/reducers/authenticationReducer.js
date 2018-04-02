@@ -8,6 +8,8 @@ const authenticationReducer = (state = initialState, action) => {
       return { loggedIn: true, user: action.user }
     case 'LOGOUT_USER':
       return initialState
+    case 'LOGIN_ERROR':
+      return {...state, loginError: action.error}
     default:
       return state
   }
