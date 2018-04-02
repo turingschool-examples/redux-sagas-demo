@@ -24,4 +24,16 @@ describe('actions', () => {
     }
     expect(actions.loginError('An error')).toEqual(expected)
   })
+
+  it('should have a type of SUBMIT_USER_LOGIN', () => {
+    const user = {
+      email: 'will@turing.io',
+      password: 'password'
+    }
+    const expected = {
+      type: 'SUBMIT_USER_LOGIN',
+      user
+    }
+    expect(actions.submitUserLogin(user)).toEqual(expected)
+  })
 })

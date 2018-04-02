@@ -11,3 +11,8 @@ export const loginError = (error) => ({
   type: 'LOGIN_ERROR',
   error
 })
+
+export const submitUserLogin = user => ({
+  type: 'SUBMIT_USER_LOGIN',
+  user
+})
