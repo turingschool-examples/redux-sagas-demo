@@ -32,7 +32,7 @@ class Login extends Component {
 
   submitLogin = async event => {
     event.preventDefault()
-    await this.props.loginUser(this.state)
+    await this.props.submitUserLogin(this.state.email, this.state.password)
   }
 
   render = () => (
@@ -59,7 +59,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  loginUser: (user) => dispatch(actions.loginUser(user))
+  //loginUser: (user) => dispatch(actions.loginUser(user))
+  submitUserLogin: (email, password) => dispatch(actions.submitUserLogin(email, password)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
