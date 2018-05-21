@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from '../../actions'
 
 class Main extends Component {
   componentWillMount = () => {
@@ -17,6 +18,7 @@ class Main extends Component {
   render = () => (
     <div>
       This is the main page
+      <button onClick={this.props.logOut}>Log Me Out</button>
     </div>
   )
 }
@@ -25,4 +27,8 @@ const mapStateToProps = (state) => ({
   loggedIn: state.authentication.loggedIn,
 })
 
-export default connect(mapStateToProps, null)(Main)
+const mapDispatchToProps = (dispatch) => ({
+  logOut: () => dispatch(actions.logoutUser())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Main)
